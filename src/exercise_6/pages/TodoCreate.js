@@ -1,11 +1,13 @@
 import React from 'react'
 import { connect } from 'react-redux'
 
-import { addTodo, updateTodoTitle } from '../actionsCreators'
+import { addTodo } from '../actionsCreators'
 
 class TodoCreate extends React.Component {
   constructor(props) {
     super(props);
+
+    this.state = { todoTitle: '' }
 
     this.handleSubmit = this.handleSubmit.bind(this);
   }
@@ -14,7 +16,7 @@ class TodoCreate extends React.Component {
     event.preventDefault();
 
     let newTodo = {
-      title: this.props.todoTitle,
+      title: this.state.todoTitle,
       completed: false
     };
 
@@ -24,7 +26,7 @@ class TodoCreate extends React.Component {
   render() {
     return (
       <form onSubmit={this.handleSubmit}>
-        <input value={this.props.todoTitle} onChange={event => this.props.updateTodoTitle(event.target.value)} />
+        <input value={this.state.todoTitle} onChange={event => this.setState({ todoTitle: event.target.value })} />
         <input type="submit" />
       </form>
     )
@@ -33,15 +35,13 @@ class TodoCreate extends React.Component {
 
 function mapStateToProps(state) {
   return {
-    todos: state.todos,
-    todoTitle: state.todoTitle
+    todos: state.todos
   }
 }
 
 function mapDispatchToProps(dispatch) {
   return {
     addTodo: todo => dispatch(addTodo(todo)),
-    updateTodoTitle: todoTitle => dispatch(updateTodoTitle(todoTitle)),
   }
 }
 

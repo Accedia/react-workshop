@@ -1,42 +1,38 @@
 import React from 'react';
-import { connect } from 'react-redux';
 import Todo from '../common/Todo';
-import { changeCurrentTodo } from '../actionsCreators';
 
 class TodoDetails extends React.Component {
-  componentDidMount() {
-    let todoId = this.props.match.params.todoId;
+  constructor(props) {
+    super(props);
 
-    fetch('https://jsonplaceholder.typicode.com/todos/' + todoId)
-      .then(response => response.json())
-      .then(todo => {
-        this.props.changeCurrentTodo(todo);
-      })
+    this.state = { todo: null }
   }
 
-  componentWillUnmount() {
-    this.props.changeCurrentTodo(null);
+  componentDidMount() {
+    // Note: Any paramether matched by the router 
+    // will be available in this.props
+    console.log(this.props)
+
+    let todoId; // = this.props...
+
+    fetch(`https://jsonplaceholder.typicode.com/todos/${todoId}`)
+      .then(response => response.json())
+      .then(todo => {
+        if (todo && Object.keys(todo).length > 0) {
+          this.setState({ todo })
+        } else {
+          console.log('Api returned an empty todo. You most probably called it with todoId = undefined.')
+        }
+      })
   }
 
   render() {
     return (
       <div>
-        {this.props.currentTodo && <Todo todo={this.props.currentTodo} />}
+        {this.state.todo && <Todo todo={this.state.todo} />}
       </div>
     )
   }
 }
 
-function mapStateToProps(state) {
-  return {
-    currentTodo: state.currentTodo
-  }
-}
-
-function mapDispatchToProps(dispatch) {
-  return {
-    changeCurrentTodo: todo => dispatch(changeCurrentTodo(todo))
-  }
-}
-
-export default connect(mapStateToProps, mapDispatchToProps)(TodoDetails)
+export default TodoDetails

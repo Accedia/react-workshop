@@ -1,22 +1,16 @@
 import { createStore } from 'redux'
 
 let defaultState = {
-  todos: [],
-  todoTitle: '',
-  currentTodo: null
+  todos: []
 }
 
 let rootReducer = (state = defaultState, action) => {
   console.log(action)
   switch (action.type) {
-    case 'UPDATE_TODO_TITLE':
-      return Object.assign({}, state, { todoTitle: action.payload })
     case 'ADD_TODOS':
-      return Object.assign({}, state, { todos: action.payload })
+      return { ...state, ...{ todos: action.payload } }
     case 'ADD_TODO':
-      return Object.assign({}, state, { todos: [action.payload, ...state.todos] })
-    case 'CHANGE_CURRENT_TODO':
-      return Object.assign({}, state, { currentTodo: action.payload })
+      return { ...state, ...{ todos: [action.payload, ...state.todos] } }
     default:
       return state
   }

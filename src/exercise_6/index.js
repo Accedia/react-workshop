@@ -16,7 +16,6 @@ class Exercise_6 extends React.Component {
   render() {
     return (
       <Provider store={store}>
-
         <BrowserRouter>
           <div>
             <Header />

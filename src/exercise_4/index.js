@@ -3,13 +3,15 @@ import Todo from './Todo';
 
 // Tasks:
 //    1. Update the state when a new todo is added.
+//    2. Make the form a controlled one.
 
 class Exercise_4 extends React.Component {
   constructor(props) {
     super(props)
 
     this.state = {
-      todos: []
+      todos: [],
+      // todoTitle: ...
     }
 
     this.todoTitleInput = React.createRef();
@@ -21,6 +23,13 @@ class Exercise_4 extends React.Component {
     this.handleSubmit = this.handleSubmit.bind(this)
   }
 
+  componentDidMount() {
+    fetch('https://jsonplaceholder.typicode.com/todos?_limit=5')
+      .then(response => response.json())
+      .then(todos => {
+        this.setState({ todos });
+      })
+  }
 
   handleSubmit(event) {
     event.preventDefault();
@@ -33,16 +42,8 @@ class Exercise_4 extends React.Component {
     // Note: React will only know you've updated the state
     // if there is a difference in the state references,
     // so we should not mutate the state object.
-    // Rather we use .setState and pass it a new array of todos.
-    this.setState({ todos: [newTodo, ...this.state.todos] })
-  }
-
-  componentDidMount() {
-    fetch('https://jsonplaceholder.typicode.com/todos?_limit=5')
-      .then(response => response.json())
-      .then(todos => {
-        this.setState({ todos });
-      })
+    // Rather we use .setState.
+    console.log('New Todo submitted', newTodo);
   }
 
   render() {
@@ -51,7 +52,7 @@ class Exercise_4 extends React.Component {
         <h1>Accedia React Workshop</h1>
 
         <form onSubmit={this.handleSubmit}>
-          <input ref={this.todoTitleInput} />
+          <input /* value={...}*/ ref={this.todoTitleInput} />
           <input type="submit" />
         </form>
 

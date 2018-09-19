@@ -10,6 +10,8 @@ class App extends React.Component {
   constructor(props) {
     super(props)
 
+    this.state = { todoTitle: '' }
+
     this.handleSubmit = this.handleSubmit.bind(this)
   }
 
@@ -17,7 +19,7 @@ class App extends React.Component {
     event.preventDefault();
 
     let newTodo = {
-      title: this.props.todoTitle,
+      title: this.state.todoTitle,
       completed: false
     };
 
@@ -38,7 +40,7 @@ class App extends React.Component {
         <h1>Accedia React Workshop</h1>
 
         <form onSubmit={this.handleSubmit}>
-          <input value={this.props.todoFormTitle} onChange={event => this.props.updateTodoTitle(event.target.value)} />
+          <input value={this.state.todoTitle} onChange={event => this.setState({ todoTitle: event.target.value })} />
           <input type="submit" />
         </form>
 
@@ -54,17 +56,12 @@ class App extends React.Component {
 
 function mapStateToProps(state) {
   return {
-    todos: state.todos,
-    todoTitle: state.todoTitle
+    todos: state.todos
   }
 }
 
 function mapDispatchToProps(dispatch) {
   return {
-    updateTodoTitle: todoTitle => dispatch({
-      type: 'UPDATE_TODO_TITLE',
-      payload: todoTitle
-    }),
     addTodos: todos => dispatch({
       type: 'ADD_TODOS',
       payload: todos

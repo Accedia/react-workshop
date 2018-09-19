@@ -5,15 +5,12 @@ import { createStore } from 'redux'
 
 let defaultState = {
   todos: [],
-  todoTitle: '',
 }
 
 let rootReducer = (state = defaultState, action) => {
   switch (action.type) {
-    case 'UPDATE_TODO_TITLE':
-      return Object.assign({}, state, { todoTitle: action.payload })
     case 'ADD_TODOS':
-      return Object.assign({}, state, { todos: action.payload })
+      return { ...state, ...{ todos: action.payload } }
     // case 'ADD_TODO':
     //   return ...
     default:
