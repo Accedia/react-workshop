@@ -21,8 +21,8 @@ class Home extends React.Component {
         <h1>Accedia React Workshop</h1>
 
         <div className="todos-container">
-          {this.props.todos.map((todo, index) =>
-            <Todo todo={todo} key={index} />
+          {this.props.todos.map(todo =>
+            <Todo todo={todo} key={todo.id} />
           )}
         </div>
       </div>

@@ -19,6 +19,7 @@ class App extends React.Component {
     event.preventDefault();
 
     let newTodo = {
+      id: Date.now(),
       title: this.state.todoTitle,
       completed: false
     };
@@ -45,8 +46,8 @@ class App extends React.Component {
         </form>
 
         <div className="todos-container">
-          {this.props.todos.map((todo, index) =>
-            <Todo todo={todo} key={index} />
+          {this.props.todos.map(todo =>
+            <Todo todo={todo} key={todo.id} />
           )}
         </div>
       </div>

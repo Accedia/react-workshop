@@ -35,6 +35,7 @@ class Exercise_4 extends React.Component {
     event.preventDefault();
 
     let newTodo = {
+      id: Date.now(),
       title: this.todoTitleInput.current.value,
       completed: false
     }
@@ -57,8 +58,8 @@ class Exercise_4 extends React.Component {
         </form>
 
         <div className="todos-container">
-          {this.state.todos.map((todo, index) =>
-            <Todo todo={todo} key={index} />
+          {this.state.todos.map(todo =>
+            <Todo todo={todo} key={todo.id} />
           )}
         </div>
       </div>

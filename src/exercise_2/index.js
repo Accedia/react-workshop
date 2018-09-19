@@ -11,9 +11,9 @@ class Exercise_2 extends React.Component {
 
     this.state = {
       todos: [
-        { title: 'Buy groceries.', completed: false },
-        { title: 'Wash dishes.', completed: true },
-        { title: 'Learn React!', completed: false }
+        { id: '111', title: 'Buy groceries.', completed: false },
+        { id: '222', title: 'Wash dishes.', completed: true },
+        { id: '333', title: 'Learn React!', completed: false }
       ]
     }
   }
@@ -23,7 +23,7 @@ class Exercise_2 extends React.Component {
       <div>
         <h1>Accedia React Workshop</h1>
 
-        {this.state.todos.map((todo, index) =>
+        {this.state.todos.map(todo =>
           <Todo todo={todo} />
         )}
 
