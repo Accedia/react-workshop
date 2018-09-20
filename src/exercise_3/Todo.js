@@ -8,7 +8,7 @@ class Todo extends React.Component {
     return (
       <div className='todo'>
         <div>Title: {todo.title}</div>
-        <div>Completed: {todo.completed.toString()}</div>
+        <div>Completed: {todo.completed ? 'true' : 'false'}</div>
       </div>
     )
   }
