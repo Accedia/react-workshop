@@ -1,17 +1,21 @@
-import React from 'react';
-
 // Tasks: 
-//    1. Make the component a stateless one.
+//    1. Make the component a stateless one(a pure function);
 
-class Todo extends React.Component {
+import React, { Component } from 'react';
+
+class Todo extends Component {
   render() {
+    const { title, completed } = this.props.todo;
+
     return (
       <div className='todo'>
-        <div>Title: {todo.title}</div>
-        <div>Completed: {todo.completed.toString()}</div>
+        <div>Title: {title}</div>
+        <div>
+          Completed: <span>{ completed ? 'V' : 'X'}</span>
+        </div>
       </div>
     )
   }
 }
 
-export default Todo
+export default Todo;

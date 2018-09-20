@@ -1,10 +1,10 @@
-import React from 'react';
+// Tasks:
+//    1. Complete the tasks in the Todo component's file in the current directory.
+
+import React, { Component } from 'react';
 import Todo from './Todo';
 
-// Tasks:
-//    1. Complete the tasks in the Todo component.
-
-class Exercise_3 extends React.Component {
+class Exercise_3 extends Component {
   constructor(props) {
     super(props)
 
@@ -20,11 +20,11 @@ class Exercise_3 extends React.Component {
   render() {
     return (
       <div>
-        <h1>Accedia React Workshop</h1>
+        <h1>Accedia Workshops - ReactJS</h1>
 
         <div className="todos-container">
-          {this.state.todos.map(todo =>
-            <Todo todo={todo} key={todo.id} />
+          {this.state.todos.map(currentTodo =>
+            <Todo key={currentTodo.id} todo={currentTodo} />
           )}
         </div>
       </div>
@@ -32,4 +32,4 @@ class Exercise_3 extends React.Component {
   }
 }
 
-export default Exercise_3
+export default Exercise_3;

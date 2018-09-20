@@ -1,27 +1,22 @@
-import React from 'react';
-
 // Tasks:
-//    1. Add a heading tag to the page.
-//    2. Add conditional logic for what to render.
+//    1. Add a heading tag(<h1>Accedia Workshops - ReactJS</h1>) to the top of the page.
+//    2. Add conditional logic(<span>{ this.conditionalMethod() ? 'YAY, you won!' : 'NAY, you lost!' }</span>) in the render method.
 
-class Exercise_1 extends React.Component {
+import React, { Component } from 'react';
 
-  // returns a random boolean
-  conditionMethod() {
+class Exercise_1 extends Component {
+  // A class level method that returns a random boolean value with rougly 50-50 chance
+  conditionalMethod() {
     return Math.random() >= 0.5;
   }
 
-  // Note: The render method expects us to return one root component.
+  // Note: The render method expects us to return a single component(object).
   // If you wish to add more than one tag, wrap them in a div.
   render() {
     return (
-      <div>Hello world</div>
-
-      // Hint: Adding curly brackets evaluates the 
-      // expression inside and we are able to do things like this:
-      // { condition ? <div>...</div> : <span>...</span> }
-    )
+      <p>Hello world</p>
+    );
   }
 }
 
-export default Exercise_1
+export default Exercise_1;

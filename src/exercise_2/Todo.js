@@ -1,9 +1,9 @@
-import React from 'react';
-
 // Tasks:
-//    1. Render the todo.completed flag
+//    1. Render 'V' or 'X' depending on the todo.completed flag(<span>{ BOOLEAN_VALUE ? 'V' : 'X'}</span>)
 
-class Todo extends React.Component {
+import React, { Component } from 'react';
+
+class Todo extends Component {
   render() {
     return (
       <div>Title: {this.props.todo.title}</div>
@@ -11,4 +11,4 @@ class Todo extends React.Component {
   }
 }
 
-export default Todo
+export default Todo;

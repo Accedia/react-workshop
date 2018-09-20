@@ -1,11 +1,12 @@
-import React from 'react';
+// Tasks:
+//    1. Output the list of todos(see line 29), use the Todo component in the current working directory, it is already imported(line 7).
+//    2. Complete the exercise with no console errors regarding keys.
+//    3. Complete the tasks in the Todo component's file.
+
+import React, { Component } from 'react';
 import Todo from './Todo';
 
-// Tasks:
-//    1. Complete the exercise with no console errors.
-//    2. Complete the tasks in the Todo component.
-
-class Exercise_2 extends React.Component {
+class Exercise_2 extends Component {
   constructor(props) {
     super(props)
 
@@ -21,15 +22,16 @@ class Exercise_2 extends React.Component {
   render() {
     return (
       <div>
-        <h1>Accedia React Workshop</h1>
+        <h1>Accedia Workshops - ReactJS</h1>
 
-        {this.state.todos.map(todo =>
-          <Todo todo={todo} />
-        )}
-
+        <div>
+          {this.state.todos.map(todo =>
+            console.log(todo)
+          )}
+        </div>
       </div>
     )
   }
 }
 
-export default Exercise_2
+export default Exercise_2;
