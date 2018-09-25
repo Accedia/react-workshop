@@ -6,6 +6,7 @@ import Todo from './Todo';
 
 class Exercise_3 extends Component {
   constructor(props) {
+    // The super() call below basically invokes the React.Component's initialization code. Again - fancy ES6.
     super(props)
 
     this.state = {
@@ -24,6 +25,7 @@ class Exercise_3 extends Component {
 
         <div className="todos-container">
           {this.state.todos.map(currentTodo =>
+            // Here each individual item has an unique key prop thus fixing the key warning that you previously encountered.
             <Todo key={currentTodo.id} todo={currentTodo} />
           )}
         </div>
