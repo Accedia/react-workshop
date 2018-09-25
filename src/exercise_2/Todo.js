@@ -10,7 +10,7 @@ class Todo extends Component {
       <div className='todo'>
         <div>Title: { this.props.todo.title }</div>
       </div>
-    )
+    );
   }
 }
 

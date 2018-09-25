@@ -7,7 +7,7 @@ import Todo from './Todo';
 class Exercise_3 extends Component {
   constructor(props) {
     // The super() call below basically invokes the React.Component's initialization code. Again - fancy ES6.
-    super(props)
+    super(props);
 
     this.state = {
       todos: [
@@ -15,7 +15,7 @@ class Exercise_3 extends Component {
         { id: '2241252344324', title: 'Wash dishes.', completed: true },
         { id: '3343253423447', title: 'Learn React!', completed: false }
       ]
-    }
+    };
   }
 
   render() {
@@ -30,7 +30,7 @@ class Exercise_3 extends Component {
           )}
         </div>
       </div>
-    )
+    );
   }
 }
 

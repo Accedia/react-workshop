@@ -15,7 +15,7 @@ class Todo extends Component {
         <div>Title: { title }</div>
         <span>{ completed ? 'V' : 'X'}</span>
       </div>
-    )
+    );
   }
 }
 
