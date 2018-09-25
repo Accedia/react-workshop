@@ -1,6 +1,7 @@
 // Tasks:
-//    1. Update the state when a new todo is added(rewrite line 50).
-//    2. Make sure that you can toggle the state of each todo separately from completed to pending and vice versa(line 59).
+//    1. Update the state when a new todo is added(rewrite line 51).
+//    2. Make sure that you can toggle the state of each todo separately from completed to pending and vice versa(line 60).
+//    You will also need to check the callback that we are passing to the Todo component(line 87). This is a tough one.
 
 import React, { Component } from 'react';
 import Todo from './Todo';
@@ -79,10 +80,11 @@ class Exercise_4 extends Component {
         <div className="todos-container">
           {this.state.todos.map(currentTodo =>
             // Note how we are again passing the toggleTodoState call as a callback rather than invoking the function directly.
+            // You need to check ./Todo.js and see how to handle the onClickHandlerThatWeNeedToWrite callback that we are passing.
             <Todo 
               key={currentTodo.id} 
               todo={currentTodo} 
-              onClickHandlerThatWeNeedToWrite={ () => this.toggleTodoState(currentTodo.id) }
+              onClickHandlerThatWeNeedToWrite={ id => this.toggleTodoState(id) }
             />
           )}
         </div>

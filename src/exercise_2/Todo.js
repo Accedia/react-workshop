@@ -1,5 +1,5 @@
 // Tasks:
-//    1. Render 'V' or 'X' depending on the todo's completed flag(<span>{ #REPLACE_THIS# ? 'V' : 'X'}</span>) below the title.
+//    1. Render 'V' or 'X' depending on the todo's completed flag(<span>{ #REPLACE_THIS# ? 'V' : 'X' }</span>) below the title.
 
 import React, { Component } from 'react';
 

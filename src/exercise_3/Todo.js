@@ -13,7 +13,7 @@ class Todo extends Component {
     return (
       <div className='todo'>
         <div>Title: { title }</div>
-        <span>{ completed ? 'V' : 'X'}</span>
+        <span>{ completed ? 'V' : 'X' }</span>
       </div>
     );
   }
