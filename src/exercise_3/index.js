@@ -10,9 +10,9 @@ class Exercise_3 extends Component {
 
     this.state = {
       todos: [
-        { id: '111', title: 'Buy groceries.', completed: false },
-        { id: '222', title: 'Wash dishes.', completed: true },
-        { id: '333', title: 'Learn React!', completed: false }
+        { id: '1114235532423', title: 'Buy groceries.', completed: false },
+        { id: '2241252344324', title: 'Wash dishes.', completed: true },
+        { id: '3343253423447', title: 'Learn React!', completed: false }
       ]
     }
   }

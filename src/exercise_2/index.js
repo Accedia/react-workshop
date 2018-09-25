@@ -25,8 +25,8 @@ class Exercise_2 extends Component {
         <h1>Accedia Workshops - ReactJS</h1>
 
         <div className="todos-container">
-          {this.state.todos.map(todo =>
-            console.log(todo)
+          {this.state.todos.map(currentTodo =>
+            console.log(currentTodo)
           )}
         </div>
       </div>

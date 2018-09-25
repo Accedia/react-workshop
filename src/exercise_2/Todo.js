@@ -1,5 +1,5 @@
 // Tasks:
-//    1. Render 'V' or 'X' depending on the todo.completed flag(<span>{ #SOME_BOOLEAN_VALUE# ? 'V' : 'X'}</span>)
+//    1. Render 'V' or 'X' depending on the todo.completed flag(<span>{ #SOME_BOOLEAN_VALUE# ? 'V' : 'X'}</span>) below the title.
 
 import React, { Component } from 'react';
 
