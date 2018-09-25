@@ -36,15 +36,9 @@ input[type=submit]:hover {
     background-color: #45a049;
 }
 
-header {
-    background: red;
-    display: flex;
+h1 {
+    background: #ddd;
+    font-size: 60px;
     padding: 20px;
-}
-
-header > * {
-    margin: auto;
-    color: white;
-    font-weight: bold;
-    text-decoration: none;
+    margin: 0px;
 }
