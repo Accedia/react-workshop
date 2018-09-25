@@ -1,11 +1,11 @@
 // Tasks:
 //    1. Add a heading tag(<h1>Accedia Workshops - ReactJS</h1>) to the top of the page.
-//    2. Add conditional logic(<span>{ this.conditionalMethod() ? 'YAY, you won!' : 'NAY, you lost!' }</span>) in the render method.
+//    2. Add conditional logic(<span>{ #SOME_CONDITIONAL_METHOD# ? 'YAY, you won!' : 'NAY, you lost!' }</span>) in the render method.
 
 import React, { Component } from 'react';
 
 class Exercise_1 extends Component {
-  // A class level method that returns a random boolean value with rougly 50-50 chance
+  // A class level method that returns a random boolean value with rougly 50-50 chance.
   conditionalMethod() {
     return Math.random() >= 0.5;
   }
