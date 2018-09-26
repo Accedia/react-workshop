@@ -1,10 +1,10 @@
 // Tasks: 
-//    1. Wire up the onClick event handler(line 26) with the callback that is received via props from the parent component.
+//    1. Wire up the onClick event handler(line 11) with the callback that is received via props from the parent component.
 
 import React from 'react';
 
 const Todo = props => {
-  // Hint - you will need to use something from the props for the callback on line 11.
+  // Hint - you will need to use something from the props for the callback.
   const { title, completed } = props.todo;
 
   return (
