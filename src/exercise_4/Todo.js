@@ -4,7 +4,7 @@
 import React from 'react';
 
 const Todo = props => {
-  // Hint - you will need to use something from the props.todo for the callback on line 11.
+  // Hint - you will need to use something from the props for the callback on line 11.
   const { title, completed } = props.todo;
 
   return (

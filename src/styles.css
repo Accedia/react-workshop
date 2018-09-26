@@ -42,3 +42,16 @@ h1 {
     padding: 20px;
     margin: 0px;
 }
+
+header {
+    background: #777;
+    display: flex;
+    padding: 20px;
+}
+
+header > * {
+    margin: auto;
+    color: white;
+    font-weight: bold;
+    text-decoration: none;
+}
