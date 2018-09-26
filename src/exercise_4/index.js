@@ -78,15 +78,15 @@ class Exercise_4 extends Component {
         </form>
 
         <div className="todos-container">
-          {this.state.todos.map(currentTodo =>
+          { this.state.todos.map(currentTodo =>
             // Note how we are again passing the toggleTodoState call as a callback rather than invoking the function directly.
             // You need to check ./Todo.js and see how to handle the onClickHandlerThatWeNeedToWrite callback that we are passing.
             <Todo 
-              key={currentTodo.id} 
-              todo={currentTodo} 
+              key={ currentTodo.id } 
+              todo={ currentTodo } 
               onClickHandlerThatWeNeedToWrite={ id => this.toggleTodoState(id) }
             />
-          )}
+          ) }
         </div>
       </div>
     );

@@ -55,13 +55,13 @@ class Home extends Component {
         </form>
 
         <div className="todos-container">
-          {this.state.todos.map(currentTodo =>
+          { this.state.todos.map(currentTodo =>
             <Todo 
-              key={currentTodo.id} 
-              todo={currentTodo} 
+              key={ currentTodo.id } 
+              todo={ currentTodo } 
               onClickHandlerThatWeNeedToWrite={ id => this.toggleTodoState(id) }
             />
-          )}
+          ) }
         </div>
       </div>
     );

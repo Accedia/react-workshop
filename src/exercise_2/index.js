@@ -25,10 +25,10 @@ class Exercise_2 extends Component {
         <h1>Accedia Workshops - ReactJS</h1>
 
         <div className="todos-container">
-          {this.state.todos.map(currentTodo =>
+          { this.state.todos.map(currentTodo =>
             // Check what is logged in your browser's console and appropriately rewrite the next line.
             console.log(currentTodo)
-          )}
+          ) }
         </div>
       </div>
     );

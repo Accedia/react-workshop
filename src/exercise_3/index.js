@@ -24,10 +24,10 @@ class Exercise_3 extends Component {
         <h1>Accedia Workshops - ReactJS</h1>
 
         <div className="todos-container">
-          {this.state.todos.map(currentTodo =>
+          { this.state.todos.map(currentTodo =>
             // Here each individual item has an unique key prop thus fixing the key warning that you previously encountered.
-            <Todo key={currentTodo.id} todo={currentTodo} />
-          )}
+            <Todo key={ currentTodo.id } todo={ currentTodo } />
+          ) }
         </div>
       </div>
     );
