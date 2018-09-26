@@ -9,7 +9,7 @@ export default ({ post : { title, comments, authorName, numberOfLikes } }) => (
           <Comment key={ currentComment } comment={ currentComment } />
         ) }
         
-        <h3>{ `${ authorName }, ${ numberOfLikes }` }</h3>
+        <h3>{ `${ authorName }, ${ numberOfLikes } likes` }</h3>
 
         <hr />
     </div>
