@@ -27,7 +27,7 @@ class Exercise_2 extends Component {
         <div className="todos-container">
           { this.state.todos.map(currentTodo =>
             // Check what is logged in your browser's console and appropriately rewrite the next line.
-            console.log(currentTodo)
+            console.log('This is a todo', currentTodo)
           ) }
         </div>
       </div>

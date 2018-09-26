@@ -1,7 +1,7 @@
 // Tasks:
-//    1. Update the state when a new todo is added(rewrite line 51).
-//    2. Make sure that you can toggle the state of each todo separately from completed to pending and vice versa(line 60).
-//    You will also need to check the callback that we are passing to the Todo component(line 87). This is a tough one.
+//    1. Update the state when a new todo is added(rewrite line 53).
+//    2. Make sure that you can toggle the state of each todo separately from completed to pending and vice versa(line 62).
+//    You will also need to check the callback that we are passing to the Todo component(line 89). This is a tough one.
 
 import React, { Component } from 'react';
 import Todo from './Todo';
@@ -19,16 +19,18 @@ class Exercise_4 extends Component {
   }
 
   componentDidMount() {
+    // Here is the full url that we need to fetch data from.
+    const urlToFetchFrom = 'https://jsonplaceholder.typicode.com/todos?_limit=5';
+
     // Fetch is a built in XHR(AJAX) client with a Promise based API - basically we send a get request.
     // We use a sample public API that returns mock data.
-    fetch('https://jsonplaceholder.typicode.com/todos?_limit=5')
+    fetch(urlToFetchFrom)
       // We make sure that the response is in JSON data format prior to using the data.
       .then(response => response.json())
       // We now set this.state.todos to be the API's response.
       // We use the setState({}) syntax in order to comply with React's immutability recommendations.
-      // Again ES6 syntax heads up: when the key and value match such as { todos: todos }, this is equivalent to { todos }.
       .then(todos => {
-        this.setState({ todos });
+        console.log('The fetched todos are:', todos);
       });
   }
 
