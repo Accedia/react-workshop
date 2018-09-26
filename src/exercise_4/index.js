@@ -1,7 +1,8 @@
 // Tasks:
-//    1. Update the state when a new todo is added(rewrite line 53).
-//    2. Make sure that you can toggle the state of each todo separately from completed to pending and vice versa(line 62).
-//    You will also need to check the callback that we are passing to the Todo component(line 89). This is a tough one.
+//    1. Finish the componentDidMount method implementation.
+//    2. Update the state when a new todo is added(rewrite line 54).
+//    3. Make sure that you can toggle the state of each todo separately from completed to pending and vice versa(line 63).
+//    4. You will also need to check the callback that we are passing to the Todo component(line 90). This is a tough one.
 
 import React, { Component } from 'react';
 import Todo from './Todo';
@@ -46,16 +47,16 @@ class Exercise_4 extends Component {
       completed: false
     }
 
-    // Note: React will only know you've updated the state
-    // if there is a difference in the state references,
-    // so we should not mutate the state object.
+    // Note: React will only know you've updated the state if there is a difference in the state references,
+    // so we should not mutate the state object(we must return a new object).
     // That is why we use the this.setState() method for updating our state. You need to put the new todo in the this.state.todos collection.
+    // We may use the fancy ES6 spread syntax [...collection, newItem] which adds a new item to a collection.
     console.log('New Todo submitted', newTodo);
   }
 
   toggleTodoState = id => {
-    // In the two rows below we find the clicked todo. We need to flip its completed flag.
-    const newTodos = this.state.todos;
+    // In the two rows below we clone the todos from the state and then find the clicked todo. We need to flip its completed flag.
+    const newTodos = [ ...this.state.todos ];
     const toggledTodo = newTodos.find(todo => todo.id === id);
 
     // Flip the completed flag and rewrite it in the this.state.todos array. Use ...newTodos - the spread ES6 operator.
